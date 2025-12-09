@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    /*
+    Para passar código de função para classe tem que alterar a
+    sintaxe substituindo Hooks pelos métodos de gerenciamento de estado 
+    e ciclo de vida de classes.
+    
+    O cabeçalho permanece o mesmo 
+    */
+
+    // const FormSoma = () => {
+    //     const [num1, setNum1] = React.useState(0)
+    //     const [num2, setNum2] = React.useState(0)
+    //     const [soma, setSoma] = React.useState(0)             
+    const FormSoma = class extends React.Component { //função soma estende React.Component (cria componente de classe)
+        constructor (props){                         //para inicializar o estado interno da class
+            super(props)                             //chama o construtor da classe super, React.Component, para poder usar o this.
+            this.state = { num1: 0, num2: 0, soma: 0 }  //inicializa o estado com método state 
+        } 
+
+    //    React.useEffect(() => {
+    //         setSoma(isNaN(num1) || isNaN(num2) ? '' : num1 + num2)
+    //     }, [num1, num2]) 
+        componentDidUpdate (prevProps, prevState) { //chama classe sempre que componente atualizar
+            if (prevState.num1 !== this.state.num1 || prevState.num2 !== this.state.num2) { //verifica se houve mudança de estado nas variáveis num1 e num2
+                this.setState({ soma: isNaN(this.state.num1) || isNaN(this.state.num2) ? '' : this.state.num1 + this.state.num2 })
+                //atualiza a soma com método setState this.setState({chave: valor})
+                //se houver valor nulo, a soma retorna vazio, senão retorna a soma de num1 + num2
+            } 
+        }
+
+    //     const handleChange1 = event => setNum1(Number(event.target.value))           
+    //     const handleChange2 = event => setNum2(Number(event.target.value))
+        handleChange1 = (event) => {    //método para capturar evento de mudança no input num1
+            this.setState({ num1: Number(event.target.value) }) //converte o valor do input para número e atualiza o estado
+        }
+
+        handleChange2 = (event) => {  //repete o processo para input num2
+            this.setState({ num2: Number(event.target.value) })
+        }     
+    render(){ //inclui método obrigatório em componentes de classe ->retorna o JSX (saída)     
+        return (
+            <form>
+                <div>
+                    {/*valores dos inputs controlados com this.state e this.handleChenge*/}
+
+                    <label htmlFor="num1">Primeiro número:</label><br /> {/*sintaxe label não muda*/}              
+                    {/*<input id="num1" type="number" value={num1} onChange={handleChange1} />*/}
+                    <input id="num1" type="number" value={this.state.num1} onChange={this.handleChange1} />                
+                </div>
+                <div>
+                    <label htmlFor="num2">Segundo número:</label><br />
+                    {/*<input id="num2" type="number" value={num2} onChange={handleChange2} />*/}
+                    <input id="num2" type="number" value={this.state.num2} onChange={this.handleChange2} />
+                 </div>
+                    {/*<div>Soma: {soma}</div>*/}
+                    <div>Soma: {this.state.soma}</div>
+            </form>                                                                          
+        )
+
+    }
+}
+//sintaxe ReactDOM e de renderização não mudam
+const root = ReactDOM.createRoot(document.getElementById('root'))               
+root.render(<FormSoma />)
+
+  </script>
+
+</body>
+</html>
