@@ -12,7 +12,13 @@
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+<<<<<<< HEAD
     "react-router-dom": "^7.9.3"
+=======
+    "react-error-boundary": "^6.0.0",
+    "react-router-dom": "^7.9.3",
+    "vanilla-tilt": "^1.8.1"
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

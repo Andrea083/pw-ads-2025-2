@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from 'react-router-dom' //importado para mudar de página pelo menu
 
+<<<<<<< HEAD
  
  
 export default function MainMenu() {
@@ -17,6 +18,17 @@ export default function MainMenu() {
    setAnchorEl(null)
  }
  
+=======
+export default function MainMenu() {
+ const [anchorEl, setAnchorEl] = React.useState(null);
+ const open = Boolean(anchorEl);
+ const handleClick = (event) => {
+   setAnchorEl(event.currentTarget);
+ };
+ const handleClose = () => {
+   setAnchorEl(null);
+ };
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
  
  return (
    <div>
@@ -60,7 +72,10 @@ export default function MainMenu() {
        >
          Listagem de veículos
        </MenuItem>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
        <MenuItem
          onClick={handleClose}
          component={Link}
@@ -68,6 +83,7 @@ export default function MainMenu() {
        >
          Listagem de clientes
        </MenuItem>
+<<<<<<< HEAD
 
        <MenuItem
          onClick={handleClose}
@@ -80,6 +96,12 @@ export default function MainMenu() {
      </Menu>
    </div>
  )
+=======
+      
+     </Menu>
+   </div>
+ );
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
 }
 /* Quando passamos de uma página a outra, somente o conteúdo da área central 
 é substituído - repare que as barras de cabeçalho e de rodapé permanecem inalteradas. 
@@ -89,4 +111,8 @@ página. Aplicações que fazem uso dessa técnica são chamados
 SPA (Single Page Applications). A técnica SPA não é exclusiva do React ou 
 da biblioteca MUI. O aplicativo SPA mais famoso talvez seja o Gmail, 
 que é desenvolvido em Angular, o principal concorrente do React.
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546

@@ -34,7 +34,10 @@ function Display({name, animal}) {
 return <div>{`Olá ${name}, seu animal favorito é: ${animal}!`}</div>
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
 // 💣 exclua esse componente que só mostra o name e use o novo que mostra animal também
 // function Display({name}) {
 //    return <div>{`Hey ${name}, you are great!`}</div>
@@ -56,4 +59,8 @@ function Exercicio03() {
   )
 }
 
+<<<<<<< HEAD
 export default Exercicio03
+=======
+export default Exercicio03
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546

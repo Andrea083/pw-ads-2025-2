@@ -9,7 +9,11 @@ import Exercicio02 from './exercicios/02.jsx'
 import Exercicio03 from './exercicios/03.jsx'
 import Exercicio04 from './exercicios/04.jsx'
 import Exercicio05 from './exercicios/05.jsx'
+<<<<<<< HEAD
 
+=======
+import Exercicio06 from './exercicios/06.jsx'
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
 
 function App() {
 
@@ -19,6 +23,7 @@ function App() {
       <BrowserRouter>
         <ul>
           <li> <Link to="/">Página inicial</Link> </li>
+<<<<<<< HEAD
           <li> <Link to="/01">Exercício 01</Link> </li> 
           <li> <Link to="/02">Exercício 02</Link> </li> 
           <li> <Link to="/03">Exercício 03</Link> </li> 
@@ -26,6 +31,16 @@ function App() {
           <li> <Link to="/05">Exercício 05</Link> </li> 
         </ul>       
 
+=======
+          <li> <Link to="/01">Exercício 01</Link> </li>
+          <li> <Link to="/02">Exercício 02</Link> </li>
+          <li> <Link to="/03">Exercício 03</Link> </li>
+          <li> <Link to="/04">Exercício 04</Link> </li>
+          <li> <Link to="/05">Exercício 05</Link> </li>
+          <li> <Link to="/06">Exercício 06</Link> </li>
+        </ul>
+        
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
         <hr />
 
         <Routes>
@@ -36,7 +51,11 @@ function App() {
           <Route path="/03" element={<Exercicio03 />} />
           <Route path="/04" element={<Exercicio04 />} />
           <Route path="/05" element={<Exercicio05 />} />
+<<<<<<< HEAD
           
+=======
+          <Route path="/06" element={<Exercicio06 />} />
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
         </Routes>
       </BrowserRouter>
     </>
@@ -44,4 +63,7 @@ function App() {
 }
 
 export default App
+<<<<<<< HEAD
 
+=======
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546

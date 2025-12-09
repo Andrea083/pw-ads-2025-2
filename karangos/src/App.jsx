@@ -1,5 +1,6 @@
 // import './App.css'
 import { BrowserRouter } from 'react-router-dom'
+<<<<<<< HEAD
 import HeaderBar from './ui/HeaderBar'
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box' //importado para colocar o texto das páginas dentro de um box com margens configuradas
@@ -35,3 +36,42 @@ export default App
 //recomendações de design m3.material.io do Google para padronizar aplicações Android
 //foi trazido para web também e traduziu-se para CSS.
 //juntou com o React e formou-se a biblioteca pronta de design (componentes visuais): mui.com
+=======
+
+import HeaderBar from './ui/HeaderBar'
+
+import CssBaseline from '@mui/material/CssBaseline'
+import Box from '@mui/material/Box'
+
+import { ThemeProvider } from '@mui/material/styles'
+import theme from './ui/theme'
+
+import FooterBar from './ui/FooterBar'
+
+import AppRoutes from './routes/AppRoutes'
+
+function App() {
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        
+        <CssBaseline />
+        
+        <BrowserRouter>
+          <HeaderBar />
+
+          {/* Dentro da prop "sx", "m" significa "margin" */}
+          <Box id="innerRoot" sx={{ m: '48px 24px' }}>
+            <AppRoutes />
+          </Box>
+
+          <FooterBar />
+        </BrowserRouter>
+      
+      </ThemeProvider>
+    </>
+  )
+}
+
+export default App
+>>>>>>> 58959509823bdd6e5c1fe406b242acf7e246f546
